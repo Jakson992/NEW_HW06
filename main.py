@@ -77,15 +77,24 @@ def seed_grades():
 
     cursor.executemany(sql, grades)
 
+def execute_query(query):
+    cursor.execute(query)
+    results = cursor.fetchall()
+
+    if results:
+        for row in results:
+            print(row)
+    else:
+        print("Нет результатов.")
 
 if __name__ == '__main__':
-    seed_teacher()
-    seed_groups()
-    seed_students()
-    seed_subjects()
-    seed_grades()
-    connect.commit()
-    connect.close()
+    # seed_teacher()
+    # seed_groups()
+    # seed_students()
+    # seed_subjects()
+    # seed_grades()
+    # connect.commit()
+    # connect.close()
 
     while True:
         choice = input("Введите номер запроса (1-10) или 'exit' для выхода: ")
