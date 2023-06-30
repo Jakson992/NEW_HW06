@@ -160,7 +160,7 @@ if __name__ == '__main__':
 
             elif choice == 6:
                 query = """
-                SELECT g.name , g.name , s.name
+                SELECT s.fullname
                 FROM students s
                 INNER JOIN groups g ON g.id = s.group_id
                 WHERE g.id = 1;
